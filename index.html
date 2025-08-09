@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Roadmap & Timetable Builder</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="wrap">
+  <h1>Roadmap & Timetable Builder</h1>
+  <div class="panel">
+    <aside class="card">
+      <h3 class="small">Add Roadmap Item</h3>
+      <div class="field"><label>Title</label><input id="roadmapTitle" /></div>
+      <div class="field"><label>Description</label><textarea id="roadmapDesc"></textarea></div>
+      <div class="field"><label>Date</label><input id="roadmapDate" type="date" /></div>
+      <button id="addRoadmap" class="btn">Add to Roadmap</button>
+      <hr />
+      <h3 class="small">Add Timetable Entry</h3>
+      <div class="field"><label>Subject/Task</label><input id="timeSubject" placeholder="e.g. Math Revision" /></div>
+      <div class="field"><label>Day</label><select id="daySelect"></select></div>
+      <div class="field"><label>Time</label><input id="timeSlot" type="time" /></div>
+      <button id="addTimetable" class="btn">Add to Timetable</button>
+      <button id="downloadTimetable" class="btn">Download Timetable as Image</button>
+    </aside>
+
+    <main>
+      <div class="card">
+        <div class="small">Roadmap</div>
+        <ul id="roadmapList"></ul>
+      </div>
+      <div class="card timetable-card">
+        <div style="margin-bottom:8px;">
+          <button id="remakeBtn" class="btn" style="margin-right:10px;">Remake Timetable</button>
+          <button id="undoBtn" class="btn" disabled>Undo</button>
+        </div>
+        <div class="small">Weekly Timetable</div>
+        <div id="timetableWrapper" style="padding:12px;border-radius:8px;background:#071428;color:#9aa4b2;">
+          <table id="timetableTable">
+            <thead id="timetableHead"></thead>
+            <tbody id="timetableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
